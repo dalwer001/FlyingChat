@@ -3,7 +3,7 @@ import { KeyboardAvoidingView } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Input } from 'react-native-elements/dist/input/Input';
-import { useState,useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { Button } from 'react-native-elements';
 import { auth } from '../firebase';
 
@@ -14,20 +14,20 @@ const RegisterScreen = ({ navigation }) => {
     const [imageURL, setImageURL] = useState('');
 
     useLayoutEffect(() => {
-        
-        navigation.setOptions({
-            headerBackTitle:'Back to Login',
-        });
-        }, [navigation]);
 
-    const register=()=>{
+        navigation.setOptions({
+            headerBackTitle: 'Back to Login',
+        });
+    }, [navigation]);
+
+    const register = () => {
         auth.createUserWithEmailAndPassword(email, password)
-        .then((authUser) =>{
-            authUser.user.updateProfile({
-                displayName:name,
-                photoURL:imageURL||'https://i.pinimg.com/736x/50/df/34/50df34b9e93f30269853b96b09c37e3b.jpg'
-            })
-        }).catch((error) => alert(error.message))
+            .then((authUser) => {
+                authUser.user.updateProfile({
+                    displayName: name,
+                    photoURL: imageURL || 'https://i.pinimg.com/736x/50/df/34/50df34b9e93f30269853b96b09c37e3b.jpg'
+                })
+            }).catch((error) => alert(error.message))
     };
 
 
@@ -59,13 +59,13 @@ const RegisterScreen = ({ navigation }) => {
                     autoFocus
                     type='text'
                     value={imageURL}
-                    onChangeText={(text) => setImageURL(text)} 
-                    onSubmitEditing={register}/>
+                    onChangeText={(text) => setImageURL(text)}
+                    onSubmitEditing={register} />
             </View>
             <Button
-            containerStyle={styles.button}
-             raised onPress={register} title='Register' />
-             <View style={{ height: 100 }} />
+                containerStyle={styles.button}
+                raised onPress={register} title='Register' />
+            <View style={{ height: 100 }} />
         </KeyboardAvoidingView>
     )
 }
@@ -78,14 +78,14 @@ const styles = StyleSheet.create({
         alignments: 'center',
         justifyContent: 'center',
         padding: 10,
-        backgroundColor:'white',
+        backgroundColor: 'white',
     },
-    button:{
-        width:200,
-        marginTop:10,
+    button: {
+        width: 200,
+        marginTop: 10,
     },
-    inputContainer:{
-        width:300,
+    inputContainer: {
+        width: 300,
     },
-    
+
 })
