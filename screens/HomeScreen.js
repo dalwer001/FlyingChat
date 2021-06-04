@@ -71,7 +71,7 @@ const [chats, setChats] = useState([]);
     const enterChat = (id, chatName) => {
         navigation.navigate("Chat", {
             id,
-             chatName,
+            chatName,
         });
     };
 
@@ -81,7 +81,6 @@ const [chats, setChats] = useState([]);
             <ScrollView>
                 {chats.map(({id,data: { chatName}}) =>(
                     <CustomListItem key={id} id={id} chatName={chatName} enterChat={enterChat}/>
-
                 )
                 )}
                 <CustomListItem/>
