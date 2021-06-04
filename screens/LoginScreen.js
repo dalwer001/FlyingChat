@@ -64,13 +64,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         backgroundColor:'white',
+        
 
     },
     inputContainer: {
         width: 300,
     },
     button: {
-        width: 200,
+        width: 300,
         marginTop: 10,
     },
 });

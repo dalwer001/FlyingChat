@@ -36,7 +36,7 @@ const [chats, setChats] = useState([]);
      useLayoutEffect (() => {
         navigation.setOptions({
             title: "Flying",
-            headerStyle: {backgroundColor: "green"},
+            headerStyle: {backgroundColor: "#1EC8DB"},
             headerTitleStyle: {color: "black"},
             headerTitleColor: "black",
             headerLeft: () => (
