@@ -35,7 +35,7 @@ const RegisterScreen = ({ navigation }) => {
         <KeyboardAvoidingView behavior='padding' enabled style={styles.container}>
             <StatusBar style="light" />
             <Text h3 style={{ marginBottom: 50 }}>
-                Create a Signal account
+                Create a FlyingChat account
             </Text>
             <View style={styles.inputContainer}>
                 <Input placeholder='Full Name'
