@@ -75,7 +75,7 @@ export default RegisterScreen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignContent: 'center',
+        alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
         backgroundColor: 'white',
